@@ -135,8 +135,8 @@ def clean_dataframe(df):
 
         # Rename columns to match desired output
         rename_map = {
-            "channel": "channel_title",
-            "sender_id": "channel_username",  # Assuming 'sender_id' is the username
+            "channel": "channel_username",
+            "sender_id": "sender_id",  # Assuming 'sender_id' is the username
             "message_id": "message_id",
             "text": "message",
             "date": "message_date",
@@ -148,7 +148,7 @@ def clean_dataframe(df):
 
         # Select only the desired columns
         desired_columns = [
-            "channel_title", "channel_username", "message_id", "message",
+            "channel_username", "sender_id", "message_id", "message",
             "message_date", "media_path", "emoji_used", "youtube_links"
         ]
         df = df[[col for col in desired_columns if col in df.columns]]

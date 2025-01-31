@@ -1,0 +1,58 @@
+2025-01-31 17:47:19,827 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 17:47:20,220 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 17:50:47,486 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 17:50:47,574 - ERROR - ❌ Data cleaning error: Index(['ID'], dtype='object')
+2025-01-31 17:56:55,734 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 17:56:55,850 - WARNING - ⚠️ 'ID' column not found, skipping duplicate removal.
+2025-01-31 17:56:55,856 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 17:58:53,461 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 17:58:53,655 - WARNING - ⚠️ 'ID' column not found. Skipping duplicate removal.
+2025-01-31 17:58:53,655 - WARNING - ⚠️ 'Date' column not found. Skipping datetime conversion.
+2025-01-31 17:58:53,671 - WARNING - ⚠️ 'ID' column not found. Skipping integer conversion.
+2025-01-31 17:58:53,671 - WARNING - ⚠️ 'Message' column not found. Skipping missing value filling.
+2025-01-31 17:58:53,671 - WARNING - ⚠️ 'Media Path' column not found. Skipping missing value filling.
+2025-01-31 17:58:53,687 - WARNING - ⚠️ 'Channel Title' column not found. Skipping text standardization.
+2025-01-31 17:58:53,718 - WARNING - ⚠️ 'Channel Username' column not found. Skipping text standardization.
+2025-01-31 17:58:53,736 - WARNING - ⚠️ 'Message' column not found. Skipping text standardization.
+2025-01-31 17:58:53,736 - WARNING - ⚠️ 'Media Path' column not found. Skipping text standardization.
+2025-01-31 17:58:53,750 - WARNING - ⚠️ 'Message' column not found. Skipping emoji processing.
+2025-01-31 17:58:53,750 - WARNING - ⚠️ 'Message' column not found. Skipping YouTube link processing.
+2025-01-31 17:58:53,750 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 18:08:45,229 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 18:08:45,340 - WARNING - ⚠️ 'ID' column not found. Skipping duplicate removal.
+2025-01-31 18:08:45,340 - WARNING - ⚠️ 'Date' column not found. Skipping datetime conversion.
+2025-01-31 18:08:45,340 - WARNING - ⚠️ 'ID' column not found. Skipping integer conversion.
+2025-01-31 18:08:45,356 - WARNING - ⚠️ 'Message' column not found. Skipping missing value filling.
+2025-01-31 18:08:45,359 - WARNING - ⚠️ 'Media Path' column not found. Skipping missing value filling.
+2025-01-31 18:08:45,359 - WARNING - ⚠️ 'Channel Title' column not found. Skipping text standardization.
+2025-01-31 18:08:45,359 - WARNING - ⚠️ 'Channel Username' column not found. Skipping text standardization.
+2025-01-31 18:08:45,373 - WARNING - ⚠️ 'Message' column not found. Skipping text standardization.
+2025-01-31 18:08:45,375 - WARNING - ⚠️ 'Media Path' column not found. Skipping text standardization.
+2025-01-31 18:08:45,375 - WARNING - ⚠️ 'Message' column not found. Skipping emoji processing.
+2025-01-31 18:08:45,375 - WARNING - ⚠️ 'Message' column not found. Skipping YouTube link processing.
+2025-01-31 18:08:45,391 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 18:14:59,342 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 18:14:59,408 - INFO - ✅ Duplicates removed from dataset.
+2025-01-31 18:14:59,517 - INFO - ✅ Date column formatted to datetime.
+2025-01-31 18:14:59,563 - INFO - ✅ Emojis processed.
+2025-01-31 18:14:59,584 - INFO - ✅ YouTube links processed.
+2025-01-31 18:14:59,588 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 18:15:39,424 - INFO - ✅ Duplicates removed from dataset.
+2025-01-31 18:15:39,435 - INFO - ✅ Date column formatted to datetime.
+2025-01-31 18:15:39,487 - INFO - ✅ Emojis processed.
+2025-01-31 18:15:39,697 - INFO - ✅ YouTube links processed.
+2025-01-31 18:15:39,712 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 18:20:48,774 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 18:20:48,941 - INFO - ✅ Duplicates removed from dataset.
+2025-01-31 18:20:48,997 - INFO - ✅ Date column formatted to datetime.
+2025-01-31 18:20:49,052 - INFO - ✅ Emojis processed.
+2025-01-31 18:20:49,061 - INFO - ✅ YouTube links processed.
+2025-01-31 18:20:49,062 - INFO - ✅ Newline characters removed from 'text' column.
+2025-01-31 18:20:49,078 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 18:20:49,144 - INFO - ✅ Duplicates removed from dataset.
+2025-01-31 18:20:49,144 - INFO - ✅ Date column formatted to datetime.
+2025-01-31 18:20:49,186 - INFO - ✅ Emojis processed.
+2025-01-31 18:20:49,192 - INFO - ✅ YouTube links processed.
+2025-01-31 18:20:49,192 - INFO - ✅ Newline characters removed from 'text' column.
+2025-01-31 18:20:49,192 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 18:31:37,085 - INFO - ✅ Cleaned data saved successfully to '../data/cleaned_telegram_data.csv'.

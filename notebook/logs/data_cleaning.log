@@ -1,3 +1,54 @@
 2025-01-31 16:36:27,083 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
 2025-01-31 16:36:39,353 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
 2025-01-31 16:37:05,212 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 16:42:34,877 - INFO - ✅ Duplicates removed.
+2025-01-31 16:42:35,975 - INFO - ✅ Date column formatted.
+2025-01-31 16:42:36,053 - INFO - ✅ Column 'channel' standardized.
+2025-01-31 16:42:36,069 - INFO - ✅ Column 'text' standardized.
+2025-01-31 16:42:36,085 - INFO - ✅ Column 'image_path' standardized.
+2025-01-31 16:42:36,737 - INFO - ✅ Missing values handled.
+2025-01-31 16:42:36,831 - INFO - ✅ Columns renamed for consistency.
+2025-01-31 16:42:36,831 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 16:45:03,260 - INFO - ✅ Duplicates removed.
+2025-01-31 16:45:03,350 - INFO - ✅ Date column formatted.
+2025-01-31 16:45:03,385 - INFO - ✅ Column 'channel' standardized.
+2025-01-31 16:45:03,401 - INFO - ✅ Column 'text' standardized.
+2025-01-31 16:45:03,417 - INFO - ✅ Column 'image_path' standardized.
+2025-01-31 16:45:03,480 - INFO - ✅ Missing values handled.
+2025-01-31 16:45:03,495 - INFO - ✅ Columns renamed for consistency.
+2025-01-31 16:45:03,495 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 16:50:17,411 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 16:50:17,584 - INFO - ✅ Duplicates removed.
+2025-01-31 16:50:17,631 - INFO - ✅ Date column formatted.
+2025-01-31 16:50:17,631 - INFO - ✅ Message ID column standardized.
+2025-01-31 16:50:17,647 - INFO - ✅ Column 'channel_username' standardized.
+2025-01-31 16:50:17,662 - INFO - ✅ Column 'text' standardized.
+2025-01-31 16:50:17,667 - INFO - ✅ Column 'image_path' standardized.
+2025-01-31 16:50:17,710 - INFO - ✅ Missing values handled.
+2025-01-31 16:50:17,710 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 16:50:17,868 - INFO - ✅ Duplicates removed.
+2025-01-31 16:50:17,961 - INFO - ✅ Date column formatted.
+2025-01-31 16:50:17,977 - INFO - ✅ Message ID column standardized.
+2025-01-31 16:50:18,024 - INFO - ✅ Column 'channel_username' standardized.
+2025-01-31 16:50:18,039 - INFO - ✅ Column 'text' standardized.
+2025-01-31 16:50:18,039 - INFO - ✅ Column 'image_path' standardized.
+2025-01-31 16:50:18,055 - INFO - ✅ Missing values handled.
+2025-01-31 16:50:18,055 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 16:55:10,479 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 16:55:10,682 - INFO - ✅ Duplicates removed.
+2025-01-31 16:55:10,730 - INFO - ✅ Date column formatted.
+2025-01-31 16:55:10,730 - INFO - ✅ Message ID column standardized.
+2025-01-31 16:55:10,745 - INFO - ✅ Column 'channel_username' standardized.
+2025-01-31 16:55:10,745 - INFO - ✅ Column 'text' standardized.
+2025-01-31 16:55:10,761 - INFO - ✅ Column 'image_path' standardized.
+2025-01-31 16:55:10,777 - INFO - ✅ Missing values handled.
+2025-01-31 16:55:10,792 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 16:57:30,693 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 16:57:31,038 - INFO - ✅ Duplicates removed.
+2025-01-31 16:57:31,117 - INFO - ✅ Date column formatted.
+2025-01-31 16:57:31,133 - INFO - ✅ Message ID column standardized.
+2025-01-31 16:57:31,179 - INFO - ✅ Column 'channel_username' standardized.
+2025-01-31 16:57:31,195 - INFO - ✅ Column 'text' standardized.
+2025-01-31 16:57:31,195 - INFO - ✅ Column 'image_path' standardized.
+2025-01-31 16:57:31,242 - INFO - ✅ Missing values handled.
+2025-01-31 16:57:31,258 - INFO - ✅ Data cleaning completed successfully.

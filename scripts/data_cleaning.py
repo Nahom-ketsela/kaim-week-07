@@ -136,7 +136,7 @@ def clean_dataframe(df):
         # Rename columns to match desired output
         rename_map = {
             "channel": "channel_username",
-            "sender_id": "sender_id",  # Assuming 'sender_id' is the username
+            "sender_id": "sender_id",  
             "message_id": "message_id",
             "text": "message",
             "date": "message_date",

@@ -13,7 +13,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
         logging.FileHandler("../logs/database_setup.log"),  # Log to file
-        logging.StreamHandler()  # Log to Jupyter Notebook
+        logging.StreamHandler()  
     ]
 )
 
@@ -27,7 +27,7 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_PORT = os.getenv("DB_PORT")
 
 def get_db_connection():
-    """ Create and return database engine. """
+    """Create and return database engine."""
     try:
         DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
         engine = create_engine(DATABASE_URL)
@@ -39,20 +39,32 @@ def get_db_connection():
         logging.error(f"❌ Database connection failed: {e}")
         raise
 
+def drop_table(engine):
+    """Drop the telegram_messages table if it exists."""
+    drop_table_query = """
+    DROP TABLE IF EXISTS telegram_messages;
+    """
+    try:
+        with engine.connect().execution_options(isolation_level="AUTOCOMMIT") as connection:
+            connection.execute(text(drop_table_query))
+        logging.info("✅ Table 'telegram_messages' dropped successfully.")
+    except Exception as e:
+        logging.error(f"❌ Error dropping table: {e}")
+        raise
 
 def create_table(engine):
-    """ Create telegram_messages table if it does not exist. """
+    """Create telegram_messages table if it does not exist."""
     create_table_query = """
     CREATE TABLE IF NOT EXISTS telegram_messages (
         id SERIAL PRIMARY KEY,
         channel_username TEXT,
-         sender_id INT,
+        sender_id BIGINT,
         message_id BIGINT UNIQUE,
         message TEXT,
         message_date TIMESTAMP,
-        media_path TEXT,
-        emoji_used TEXT,       -- New column for extracted emojis
-        youtube_links TEXT     -- New column for extracted YouTube links
+        media_path TEXT,  -- Allow NULL values
+        emoji_used TEXT,
+        youtube_links TEXT
     );
     """
     try:
@@ -63,24 +75,30 @@ def create_table(engine):
         logging.error(f"❌ Error creating table: {e}")
         raise
 
-
 def insert_data(engine, cleaned_df):
-    """ Inserts cleaned Telegram data into PostgreSQL database. """
+    """Insert cleaned Telegram data into PostgreSQL database."""
     try:
         # Convert NaT timestamps to None (NULL in SQL)
         cleaned_df["message_date"] = cleaned_df["message_date"].apply(lambda x: None if pd.isna(x) else str(x))
 
+        # Ensure sender_id is of type int64
+        cleaned_df["sender_id"] = cleaned_df["sender_id"].astype("int64")
+
+        # Provide a default value for media_path if missing
+        cleaned_df["media_path"] = cleaned_df["media_path"].fillna("No Data")
+
         insert_query = """
         INSERT INTO telegram_messages 
         (channel_username, sender_id, message_id, message, message_date, media_path, emoji_used, youtube_links) 
-        VALUES ( :channel_username, : sender_id, :message_id, :message, :message_date, :media_path, :emoji_used, :youtube_links)
+        VALUES ( :channel_username, :sender_id, :message_id, :message, :message_date, :media_path, :emoji_used, :youtube_links)
         ON CONFLICT (message_id) DO NOTHING;
         """
 
-        with engine.begin() as connection:  # ✅ Auto-commit enabled
+        with engine.begin() as connection:  
             for _, row in cleaned_df.iterrows():
                 # Debug log to ensure data is being inserted
                 logging.info(f"Inserting: {row['message_id']} - {row['message_date']}")
+                logging.info(f"Sender ID: {row['sender_id']}, Type: {type(row['sender_id'])}")  # Debug sender_id
 
                 connection.execute(
                     text(insert_query),
@@ -89,8 +107,8 @@ def insert_data(engine, cleaned_df):
                         "sender_id": row["sender_id"],
                         "message_id": row["message_id"],
                         "message": row["message"],
-                        "message_date": row["message_date"],  # ✅ No NaT values
-                        "media_path": row["media_path"],
+                        "message_date": row["message_date"],  
+                        "media_path": row["media_path"],  
                         "emoji_used": row["emoji_used"],
                         "youtube_links": row["youtube_links"]
                     }
@@ -100,4 +118,3 @@ def insert_data(engine, cleaned_df):
     except Exception as e:
         logging.error(f"❌ Error inserting data: {e}")
         raise
-

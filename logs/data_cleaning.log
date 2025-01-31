@@ -56,3 +56,135 @@
 2025-01-31 18:20:49,192 - INFO - ✅ Newline characters removed from 'text' column.
 2025-01-31 18:20:49,192 - INFO - ✅ Data cleaning completed successfully.
 2025-01-31 18:31:37,085 - INFO - ✅ Cleaned data saved successfully to '../data/cleaned_telegram_data.csv'.
+2025-01-31 18:36:56,149 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 18:36:56,262 - INFO - ✅ Duplicates removed from dataset.
+2025-01-31 18:36:56,771 - INFO - ✅ Date column formatted to datetime.
+2025-01-31 18:36:56,880 - INFO - ✅ Emojis processed.
+2025-01-31 18:36:56,904 - INFO - ✅ YouTube links processed.
+2025-01-31 18:36:56,919 - INFO - ✅ Newline characters removed from 'text' column.
+2025-01-31 18:36:56,977 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 18:36:57,691 - INFO - ✅ Cleaned data saved successfully to '../data/cleaned_telegram_data.csv'.
+2025-01-31 19:20:21,570 - INFO - ✅ Successfully connected to the PostgreSQL database.
+2025-01-31 19:20:42,978 - INFO - ✅ Table 'telegram_messages' created successfully.
+2025-01-31 19:25:20,848 - INFO - Inserting: 864 - 2023-12-18 17:04:02+00:00
+2025-01-31 19:25:20,927 - ERROR - ❌ Error inserting data: (psycopg2.errors.SyntaxError) syntax error at or near ":"
+LINE 4:         VALUES ( 'DoctorsET', : sender_id, 864, 'በቀን አንዴ ብቻ ...
+                                      ^
+
+[SQL: 
+        INSERT INTO telegram_messages 
+        (channel_username, sender_id, message_id, message, message_date, media_path, emoji_used, youtube_links) 
+        VALUES ( %(channel_username)s, : sender_id, %(message_id)s, %(message)s, %(message_date)s, %(media_path)s, %(emoji_used)s, %(youtube_links)s)
+        ON CONFLICT (message_id) DO NOTHING;
+        ]
+[parameters: {'channel_username': 'DoctorsET', 'message_id': 864, 'message': 'በቀን አንዴ ብቻ የሚባለው የቢዝነስ አማካሪ  በ 10,000 ብር ብቻ የተጀመረ ቢዝነስ እስከ ሚሊየኖች ያየገው የፕራግማ ኢንቨስትመንት መስራች መርድ ብስራት  ብላክ ማርኬት ዋጋ ማነው ሚተምነው ? ኢትዮጵያ ውስጥ ቢዝነስ ለመጀመር ጥሩ ሰአት ነው ወይ ?? 3 ቢዝነስ ስንጀምር የምንሰራው ስህተቶች ! አሁኑኑ ይመልከተቱ', 'message_date': '2023-12-18 17:04:02+00:00', 'media_path': 'No Data', 'emoji_used': '👈👈👇👇', 'youtube_links': 'https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL, https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-01-31 19:26:14,077 - INFO - Inserting: 864 - 2023-12-18 17:04:02+00:00
+2025-01-31 19:26:14,086 - ERROR - ❌ Error inserting data: (psycopg2.errors.SyntaxError) syntax error at or near ":"
+LINE 4:         VALUES ( 'DoctorsET', : sender_id, 864, 'በቀን አንዴ ብቻ ...
+                                      ^
+
+[SQL: 
+        INSERT INTO telegram_messages 
+        (channel_username, sender_id, message_id, message, message_date, media_path, emoji_used, youtube_links) 
+        VALUES ( %(channel_username)s, : sender_id, %(message_id)s, %(message)s, %(message_date)s, %(media_path)s, %(emoji_used)s, %(youtube_links)s)
+        ON CONFLICT (message_id) DO NOTHING;
+        ]
+[parameters: {'channel_username': 'DoctorsET', 'message_id': 864, 'message': 'በቀን አንዴ ብቻ የሚባለው የቢዝነስ አማካሪ  በ 10,000 ብር ብቻ የተጀመረ ቢዝነስ እስከ ሚሊየኖች ያየገው የፕራግማ ኢንቨስትመንት መስራች መርድ ብስራት  ብላክ ማርኬት ዋጋ ማነው ሚተምነው ? ኢትዮጵያ ውስጥ ቢዝነስ ለመጀመር ጥሩ ሰአት ነው ወይ ?? 3 ቢዝነስ ስንጀምር የምንሰራው ስህተቶች ! አሁኑኑ ይመልከተቱ', 'message_date': '2023-12-18 17:04:02+00:00', 'media_path': 'No Data', 'emoji_used': '👈👈👇👇', 'youtube_links': 'https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL, https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-01-31 19:26:37,933 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 19:26:38,002 - INFO - ✅ Duplicates removed from dataset.
+2025-01-31 19:26:38,019 - INFO - ✅ Date column formatted to datetime.
+2025-01-31 19:26:38,047 - INFO - ✅ Emojis processed.
+2025-01-31 19:26:38,063 - INFO - ✅ YouTube links processed.
+2025-01-31 19:26:38,063 - INFO - ✅ Newline characters removed from 'text' column.
+2025-01-31 19:26:38,063 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 19:26:38,155 - INFO - ✅ Cleaned data saved successfully to '../data/cleaned_telegram_data.csv'.
+2025-01-31 19:26:38,792 - INFO - ✅ Successfully connected to the PostgreSQL database.
+2025-01-31 19:26:38,840 - INFO - ✅ Table 'telegram_messages' created successfully.
+2025-01-31 19:26:38,992 - INFO - Inserting: 864 - 2023-12-18 17:04:02+00:00
+2025-01-31 19:26:39,015 - ERROR - ❌ Error inserting data: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: 
+        INSERT INTO telegram_messages 
+        (channel_username, sender_id, message_id, message, message_date, media_path, emoji_used, youtube_links) 
+        VALUES ( %(channel_username)s, %(sender_id)s, %(message_id)s, %(message)s, %(message_date)s, %(media_path)s, %(emoji_used)s, %(youtube_links)s)
+        ON CONFLICT (message_id) DO NOTHING;
+        ]
+[parameters: {'channel_username': 'DoctorsET', 'sender_id': -1001102021238, 'message_id': 864, 'message': 'በቀን አንዴ ብቻ የሚባለው የቢዝነስ አማካሪ  በ 10,000 ብር ብቻ የተጀመረ ቢዝነስ እስከ ሚሊየኖች ያየገው የፕራግማ ኢንቨስትመንት መስራች መርድ ብስራት  ብላክ ማርኬት ዋጋ ማነው ሚተምነው ? ኢትዮጵያ ውስጥ ቢዝነስ ለመጀመር ጥሩ ሰአት ነው ወይ ?? 3 ቢዝነስ ስንጀምር የምንሰራው ስህተቶች ! አሁኑኑ ይመልከተቱ', 'message_date': '2023-12-18 17:04:02+00:00', 'media_path': 'No Data', 'emoji_used': '👈👈👇👇', 'youtube_links': 'https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL, https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-01-31 19:29:41,450 - INFO - Inserting: 864 - 2023-12-18 17:04:02+00:00
+2025-01-31 19:29:41,622 - ERROR - ❌ Error inserting data: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: 
+        INSERT INTO telegram_messages 
+        (channel_username, sender_id, message_id, message, message_date, media_path, emoji_used, youtube_links) 
+        VALUES ( %(channel_username)s, %(sender_id)s, %(message_id)s, %(message)s, %(message_date)s, %(media_path)s, %(emoji_used)s, %(youtube_links)s)
+        ON CONFLICT (message_id) DO NOTHING;
+        ]
+[parameters: {'channel_username': 'DoctorsET', 'sender_id': -1001102021238, 'message_id': 864, 'message': 'በቀን አንዴ ብቻ የሚባለው የቢዝነስ አማካሪ  በ 10,000 ብር ብቻ የተጀመረ ቢዝነስ እስከ ሚሊየኖች ያየገው የፕራግማ ኢንቨስትመንት መስራች መርድ ብስራት  ብላክ ማርኬት ዋጋ ማነው ሚተምነው ? ኢትዮጵያ ውስጥ ቢዝነስ ለመጀመር ጥሩ ሰአት ነው ወይ ?? 3 ቢዝነስ ስንጀምር የምንሰራው ስህተቶች ! አሁኑኑ ይመልከተቱ', 'message_date': '2023-12-18 17:04:02+00:00', 'media_path': 'No Data', 'emoji_used': '👈👈👇👇', 'youtube_links': 'https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL, https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-01-31 19:29:54,093 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 19:29:54,138 - INFO - ✅ Duplicates removed from dataset.
+2025-01-31 19:29:54,161 - INFO - ✅ Date column formatted to datetime.
+2025-01-31 19:29:54,233 - INFO - ✅ Emojis processed.
+2025-01-31 19:29:54,254 - INFO - ✅ YouTube links processed.
+2025-01-31 19:29:54,269 - INFO - ✅ Newline characters removed from 'text' column.
+2025-01-31 19:29:54,269 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 19:29:54,338 - INFO - ✅ Cleaned data saved successfully to '../data/cleaned_telegram_data.csv'.
+2025-01-31 19:29:56,655 - INFO - ✅ Successfully connected to the PostgreSQL database.
+2025-01-31 19:29:56,676 - INFO - ✅ Table 'telegram_messages' created successfully.
+2025-01-31 19:29:56,824 - INFO - Inserting: 864 - 2023-12-18 17:04:02+00:00
+2025-01-31 19:29:56,842 - ERROR - ❌ Error inserting data: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: 
+        INSERT INTO telegram_messages 
+        (channel_username, sender_id, message_id, message, message_date, media_path, emoji_used, youtube_links) 
+        VALUES ( %(channel_username)s, %(sender_id)s, %(message_id)s, %(message)s, %(message_date)s, %(media_path)s, %(emoji_used)s, %(youtube_links)s)
+        ON CONFLICT (message_id) DO NOTHING;
+        ]
+[parameters: {'channel_username': 'DoctorsET', 'sender_id': -1001102021238, 'message_id': 864, 'message': 'በቀን አንዴ ብቻ የሚባለው የቢዝነስ አማካሪ  በ 10,000 ብር ብቻ የተጀመረ ቢዝነስ እስከ ሚሊየኖች ያየገው የፕራግማ ኢንቨስትመንት መስራች መርድ ብስራት  ብላክ ማርኬት ዋጋ ማነው ሚተምነው ? ኢትዮጵያ ውስጥ ቢዝነስ ለመጀመር ጥሩ ሰአት ነው ወይ ?? 3 ቢዝነስ ስንጀምር የምንሰራው ስህተቶች ! አሁኑኑ ይመልከተቱ', 'message_date': '2023-12-18 17:04:02+00:00', 'media_path': 'No Data', 'emoji_used': '👈👈👇👇', 'youtube_links': 'https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL, https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-01-31 19:34:53,784 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 19:34:53,854 - INFO - ✅ Duplicates removed from dataset.
+2025-01-31 19:34:53,901 - INFO - ✅ Date column formatted to datetime.
+2025-01-31 19:34:53,962 - INFO - ✅ Emojis processed.
+2025-01-31 19:34:53,970 - INFO - ✅ YouTube links processed.
+2025-01-31 19:34:53,979 - INFO - ✅ Newline characters removed from 'text' column.
+2025-01-31 19:34:53,986 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 19:34:54,150 - INFO - ✅ Cleaned data saved successfully to '../data/cleaned_telegram_data.csv'.
+2025-01-31 19:34:55,559 - INFO - ✅ Successfully connected to the PostgreSQL database.
+2025-01-31 19:34:55,586 - INFO - ✅ Table 'telegram_messages' created successfully.
+2025-01-31 19:34:55,687 - INFO - Inserting: 864 - 2023-12-18 17:04:02+00:00
+2025-01-31 19:34:55,687 - INFO - Sender ID: -1001102021238, Type: <class 'int'>
+2025-01-31 19:34:55,687 - ERROR - ❌ Error inserting data: (sqlalchemy.exc.InvalidRequestError) A value is required for bind parameter 'media_path'
+[SQL: 
+        INSERT INTO telegram_messages 
+        (channel_username, sender_id, message_id, message, message_date, media_path, emoji_used, youtube_links) 
+        VALUES ( %(channel_username)s, %(sender_id)s, %(message_id)s, %(message)s, %(message_date)s, %(media_path)s, %(emoji_used)s, %(youtube_links)s)
+        ON CONFLICT (message_id) DO NOTHING;
+        ]
+[parameters: [{'channel_username': 'DoctorsET', 'sender_id': -1001102021238, 'message_id': 864, 'message': 'በቀን አንዴ ብቻ የሚባለው የቢዝነስ አማካሪ  በ 10,000 ብር ብቻ የተጀመረ ቢዝነስ እ ... (182 characters truncated) ... 2+00:00', 'emoji_used': '👈👈👇👇', 'youtube_links': 'https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL, https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL'}]]
+(Background on this error at: https://sqlalche.me/e/20/cd3x)
+2025-01-31 19:39:34,852 - INFO - ✅ CSV file '../data/telegram_raw_data.csv' loaded successfully.
+2025-01-31 19:39:34,946 - INFO - ✅ Duplicates removed from dataset.
+2025-01-31 19:39:35,025 - INFO - ✅ Date column formatted to datetime.
+2025-01-31 19:39:35,072 - INFO - ✅ Emojis processed.
+2025-01-31 19:39:35,087 - INFO - ✅ YouTube links processed.
+2025-01-31 19:39:35,118 - INFO - ✅ Newline characters removed from 'text' column.
+2025-01-31 19:39:35,134 - INFO - ✅ Data cleaning completed successfully.
+2025-01-31 19:39:35,292 - INFO - ✅ Cleaned data saved successfully to '../data/cleaned_telegram_data.csv'.
+2025-01-31 19:39:36,381 - INFO - ✅ Successfully connected to the PostgreSQL database.
+2025-01-31 19:39:36,428 - INFO - ✅ Table 'telegram_messages' created successfully.
+2025-01-31 19:39:36,743 - INFO - Inserting: 864 - 2023-12-18 17:04:02+00:00
+2025-01-31 19:39:36,743 - INFO - Sender ID: -1001102021238, Type: <class 'int'>
+2025-01-31 19:39:36,791 - ERROR - ❌ Error inserting data: (psycopg2.errors.NumericValueOutOfRange) integer out of range
+
+[SQL: 
+        INSERT INTO telegram_messages 
+        (channel_username, sender_id, message_id, message, message_date, media_path, emoji_used, youtube_links) 
+        VALUES ( %(channel_username)s, %(sender_id)s, %(message_id)s, %(message)s, %(message_date)s, %(media_path)s, %(emoji_used)s, %(youtube_links)s)
+        ON CONFLICT (message_id) DO NOTHING;
+        ]
+[parameters: {'channel_username': 'DoctorsET', 'sender_id': -1001102021238, 'message_id': 864, 'message': 'በቀን አንዴ ብቻ የሚባለው የቢዝነስ አማካሪ  በ 10,000 ብር ብቻ የተጀመረ ቢዝነስ እስከ ሚሊየኖች ያየገው የፕራግማ ኢንቨስትመንት መስራች መርድ ብስራት  ብላክ ማርኬት ዋጋ ማነው ሚተምነው ? ኢትዮጵያ ውስጥ ቢዝነስ ለመጀመር ጥሩ ሰአት ነው ወይ ?? 3 ቢዝነስ ስንጀምር የምንሰራው ስህተቶች ! አሁኑኑ ይመልከተቱ', 'message_date': '2023-12-18 17:04:02+00:00', 'media_path': 'No Data', 'emoji_used': '👈👈👇👇', 'youtube_links': 'https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL, https://youtu.be/5DBoEm-8kmA?si=LDLuEecNfULJVDzL'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)

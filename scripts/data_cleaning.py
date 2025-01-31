@@ -4,15 +4,16 @@ import os
 import re
 import emoji
 
+
 # Ensure logs folder exists
 os.makedirs("logs", exist_ok=True)
 
-# Configure logging
+# Configure logging with UTF-8 encoding
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler("logs/data_cleaning.log"),
+        logging.FileHandler("logs/data_cleaning.log", encoding="utf-8"),  # Ensure UTF-8 encoding
         logging.StreamHandler()
     ]
 )

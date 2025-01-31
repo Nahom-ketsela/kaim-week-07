@@ -1,4 +1,3 @@
-# scraper.py
 import os
 import asyncio
 import csv
@@ -9,9 +8,9 @@ from telethon.tl.types import MessageMediaPhoto
 
 from dotenv import load_dotenv, find_dotenv
 
-# ------------------------------------------------------------------------------
+
 # Locate and Load .env
-# ------------------------------------------------------------------------------
+
 load_dotenv(find_dotenv())  # Automatically looks up the directory tree for .env
 
 API_ID = os.getenv('TELEGRAM_API_ID')

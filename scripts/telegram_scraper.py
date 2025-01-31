@@ -10,7 +10,7 @@ from telethon.tl.types import MessageMediaPhoto
 from dotenv import load_dotenv, find_dotenv
 
 # ------------------------------------------------------------------------------
-# 1. Locate and Load .env
+# Locate and Load .env
 # ------------------------------------------------------------------------------
 load_dotenv(find_dotenv())  # Automatically looks up the directory tree for .env
 
@@ -30,7 +30,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Telegram channels
-channels_to_scrape = ["DoctorsET", "lobelia4cosmetics", "yetenaweg", "EAHCI"]
+channels_to_scrape = ["DoctorsET", "lobelia4cosmetics", "yetenaweg", "EAHCI", "CheMed123", "pzeth"]
 
 # Data storage
 OUTPUT_FOLDER = os.path.join("..", "data")  # Go one directory up (relative to scripts/)
@@ -38,7 +38,7 @@ RAW_DATA_CSV = os.path.join(OUTPUT_FOLDER, "telegram_raw_data.csv")
 IMAGES_FOLDER = os.path.join(OUTPUT_FOLDER, "images")
 
 
-async def scrape_channel(client, channel_name, limit=50):
+async def scrape_channel(client, channel_name, limit=500):
     logger.info(f"Scraping channel: {channel_name}")
     messages_data = []
 

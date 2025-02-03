@@ -1,21 +1,14 @@
-
 version: 2
 
-models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
+sources:
+  - name: public
+    description: "Raw data source for Telegram messages"
+    tables:
+      - name: telegram_messages
+        description: "Raw Telegram messages table"
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
+models:
+  - name: messages_with_media
+    description: "Messages that contain media files."
+  - name: youtube_activity_summary
+    description: "Summary of YouTube links shared per channel."

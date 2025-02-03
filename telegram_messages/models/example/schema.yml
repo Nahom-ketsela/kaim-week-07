@@ -2,13 +2,35 @@ version: 2
 
 sources:
   - name: public
-    description: "Raw data source for Telegram messages"
+    description: "Public schema containing Telegram messages"
     tables:
       - name: telegram_messages
         description: "Raw Telegram messages table"
 
 models:
   - name: messages_with_media
-    description: "Messages that contain media files."
+    description: "Messages from Telegram that include media files."
+    columns:
+      - name: message_id
+        description: "Unique identifier for each message."
+        tests:
+          - not_null
+          - unique
+      - name: media_path
+        description: "Path to the media file associated with the message."
+        tests:
+          - not_null
+      - name: message
+        description: "The content of the message."
+
   - name: youtube_activity_summary
-    description: "Summary of YouTube links shared per channel."
+    description: "Summary of YouTube links shared by channel."
+    columns:
+      - name: channel_username
+        description: "Username of the Telegram channel."
+        tests:
+          - not_null
+      - name: total_messages_with_youtube_links
+        description: "Count of messages that include YouTube links."
+        tests:
+          - not_null

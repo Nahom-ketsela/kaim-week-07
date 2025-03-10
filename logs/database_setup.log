@@ -1,0 +1,7 @@
+2025-02-04 12:05:54,091 - INFO - Successfully connected to the PostgreSQL database.
+2025-02-04 12:05:54,216 - INFO - Table 'detections' dropped successfully.
+2025-02-04 12:06:13,911 - INFO -  Table 'detections' created successfully.
+2025-02-04 12:07:41,790 - ERROR -  Error inserting data into 'detections': [Errno 2] No such file or directory: '/data/yolo_detections.csv'
+2025-02-04 12:07:55,895 - INFO - Loading data from: ../data/yolo_detections.csv
+2025-02-04 12:07:55,895 - INFO - Dataframe shape: (250, 7)
+2025-02-04 12:07:56,208 - INFO -  250 records inserted into 'detections' table.

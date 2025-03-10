@@ -13,7 +13,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler("../logs/data_cleaning.log", encoding='utf-8'),  # Set encoding to utf-8
+        logging.FileHandler("../logs/data_cleaning.log", encoding='utf-8'),  # Set encoding to utf-8 
         logging.StreamHandler()  # Log to Jupyter Notebook output
     ]
 )

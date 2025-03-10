@@ -36,4 +36,4 @@ jobs:
 
       - name: Run Telegram scraper
         run: |
-          python scripts/scrape_data.py
+          python scripts/telegram_scraper.py

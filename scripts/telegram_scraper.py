@@ -5,13 +5,12 @@ import logging
 from telethon import TelegramClient
 from telethon.errors.rpcerrorlist import ChannelInvalidError, FloodWaitError
 from telethon.tl.types import MessageMediaPhoto
-
 from dotenv import load_dotenv, find_dotenv
 
 
 # Locate and Load .env
 
-load_dotenv(find_dotenv())  # Automatically looks up the directory tree for .env
+load_dotenv(find_dotenv())  
 
 API_ID = os.getenv('TELEGRAM_API_ID')
 API_HASH = os.getenv('TELEGRAM_API_HASH')
@@ -32,12 +31,12 @@ logger = logging.getLogger(__name__)
 channels_to_scrape = ["DoctorsET", "lobelia4cosmetics", "yetenaweg", "EAHCI", "CheMed123", "pzeth"]
 
 # Data storage
-OUTPUT_FOLDER = os.path.join("..", "data")  # Go one directory up (relative to scripts/)
+OUTPUT_FOLDER = os.path.join("..", "data")  # Go one directory up (to scripts/)
 RAW_DATA_CSV = os.path.join(OUTPUT_FOLDER, "telegram_raw_data.csv")
 IMAGES_FOLDER = os.path.join(OUTPUT_FOLDER, "images")
 
 
-async def scrape_channel(client, channel_name, limit=500):
+async def scrape_channel(client, channel_name, limit=1000):
     logger.info(f"Scraping channel: {channel_name}")
     messages_data = []
 
@@ -106,7 +105,7 @@ async def main():
     # Scrape channels
     all_messages = []
     for channel_name in channels_to_scrape:
-        channel_messages = await scrape_channel(client, channel_name, limit=100)
+        channel_messages = await scrape_channel(client, channel_name, limit=200)
         all_messages.extend(channel_messages)
 
     # Append data to CSV

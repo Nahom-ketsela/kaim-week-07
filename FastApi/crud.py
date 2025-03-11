@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
 from . import models, schemas
 
-#
+
 # CRUD for Detection
-#
+
 def create_detection(db: Session, detection_data: schemas.DetectionCreate):
     detection = models.Detection(**detection_data.dict())
     db.add(detection)
@@ -34,9 +34,9 @@ def delete_detection(db: Session, detection_id: int):
     return detection
 
 
-#
+
 # CRUD for TelegramMessage
-#
+
 def create_telegram_message(db: Session, message_data: schemas.TelegramMessageCreate):
     message = models.TelegramMessage(**message_data.dict())
     db.add(message)

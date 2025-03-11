@@ -5,9 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # ---------------------------------------------------------
-# If your .env is one level above this file, use something like:
-# load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
-# Otherwise, change the path accordingly.
+# load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env')).
 # ---------------------------------------------------------
 env_path = os.path.join(os.path.dirname(__file__), "..", ".env")
 load_dotenv(dotenv_path=env_path)

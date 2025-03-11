@@ -1,91 +1,124 @@
 # Ethiopian Medical Business Data Warehouse
 
-## Overview
-
-The **Ethiopian Medical Business Data Warehouse** is a comprehensive data engineering project designed to collect, clean, transform, and store data related to Ethiopian medical businesses. The data is primarily scraped from public Telegram channels, which serve as a rich source of information about medical products, services, and trends in Ethiopia. The project also incorporates **object detection** using YOLO (You Only Look Once) to analyze images scraped from these channels, enabling the extraction of valuable insights from visual data.
-
-The processed data is stored in a centralized **data warehouse**, making it easily accessible for analysis and reporting. Additionally, the project exposes the collected data via a **FastAPI** application, providing a user-friendly interface for querying and retrieving information. This project is a powerful tool for businesses, researchers, and policymakers to gain insights into the Ethiopian medical sector, identify trends, and make data-driven decisions.
+This project is a comprehensive data engineering solution designed to collect, clean, transform, and store data related to Ethiopian medical businesses. It scrapes data from public Telegram channels, processes it using advanced techniques like object detection with YOLO, and stores it in a centralized data warehouse. The data is exposed via a FastAPI application for easy access and analysis.
 
 ---
 
-## What the Project Does
+## 🚀 Key Features
 
-1. **Data Collection**:
-   - The project scrapes data from public Telegram channels related to Ethiopian medical businesses. This includes text data (e.g., product descriptions, prices, and contact information) as well as images (e.g., product photos, advertisements).
-
-2. **Data Cleaning and Transformation**:
-   - The scraped data is cleaned and transformed to ensure consistency and usability. This involves removing duplicates, handling missing values, standardizing formats, and validating the data.
-
-3. **Object Detection**:
-   - Images scraped from Telegram channels are processed using **YOLO**, a state-of-the-art object detection model. This allows the project to identify and extract relevant objects (e.g., medical products) from the images, enriching the dataset with visual insights.
-
-4. **Data Storage**:
-   - The cleaned and transformed data is stored in a **data warehouse**, which serves as a centralized repository for all collected information. This enables efficient querying, reporting, and analysis.
-
-5. **API Exposure**:
-   - The project provides a **FastAPI** application to expose the collected data. This API allows users to query the data warehouse, retrieve specific information, and integrate the data into other applications or workflows.
+- **Automated Telegram Data Scraping**: Collects text and image data from public Telegram channels.
+- **Data Cleaning & Transformation**: Cleans and standardizes data for consistency and usability.
+- **Object Detection with YOLO**: Extracts insights from images using state-of-the-art object detection.
+- **Centralized Data Storage**: Stores processed data in a PostgreSQL database for efficient querying.
+- **API Access**: Exposes data via a FastAPI application for easy integration and retrieval.
+- **Scalable Design**: Built to handle large volumes of data and extendable for additional sources.
+- **Interactive Exploration**: Includes Jupyter Notebooks for step-by-step data analysis.
 
 ---
 
-## How to Run the Project
+## 🛠 Project Structure
+
+```
+WEEK7/
+│── data/                          # Raw and cleaned data storage
+│   ├── images
+│   ├── raw_telegram_data.csv
+│   ├── yolo_detections.csv
+│   ├── cleaned_telegram_data.csv  # Cleaned merged dataset
+│── logs/                          # Logging directory
+│── FasrApi/                      # FastApi for the backend
+│   ├── main.py
+│   ├── crud.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schema.py
+│── Frontend/                      # React.js for the frontend
+│── notebook/                      # Jupyter Notebooks for analysis
+│   ├── data_cleaning.ipynb
+|   ├── load_yolov5_to_db.ipynb
+|   ├── Object_detection_using_yolo.ipynb
+│── scripts/                       # Python scripts for processing
+│   ├── data_cleaning.py           # Functions for data cleaning
+│   ├── database_setup.py          # Database connection and table creation
+│   ├── scrape_data.py             # Telegram data scraper
+│── telegram_message_dbt/          # dbt (Data build tools)
+│── test/                       # Python scripts for testing (unit test)
+│   ├── test_data_cleaning.py  
+│── .env                           # Environment variables
+│── .gitignore                     # Files to ignore in version control
+│── channels.json                  # List of Telegram channels
+│── requirements.txt               # Required Python dependencies
+│── run_scraper.sh                 # Shell script to execute scraper
+│── README.md                      # Project documentation
+```
+
+---
+
+## 🚀 How to Run the Project
 
 ### Prerequisites
-
-- Python 3.8 or higher
-- PostgreSQL (or any other SQL database)
-- Telegram API credentials (for scraping)
+- Python 3.8+
+- PostgreSQL
+- Telegram API credentials
 
 ### Installation
-
-1. **Clone the Repository**:
+1. Clone the repository:
    ```bash
-   git clone <this repository link>
+   git clone <repository-link>
+   cd <repository-folder>
    ```
-
-2. **Install Dependencies**:
+2. Create a virtual environment and install dependencies:
    ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
    pip install -r requirements.txt
    ```
+3. Configure environment variables in `.env`:
+   ```plaintext
+   DB_NAME=your_database
+   DB_USER=your_user
+   DB_PASSWORD=your_password
+   DB_HOST=localhost
+   DB_PORT=5432
 
-3. **Set Up the Database**:
-   - Create a PostgreSQL database and update the connection details in the `database_connection.py` file.
-
-4. **Configure Telegram API**:
-   - Obtain your Telegram API credentials and update the `telegram_scraper.py` script with your credentials.
+   TELEGRAM_API_ID=your_api_id
+   TELEGRAM_API_HASH=your_api_hash
+   ```
 
 ### Running the Project
+1. **Scrape Data from Telegram**:
+   ```bash
+   python scripts/telegram_scraper.py
+   ```
+2. **Clean the Data**:
+   ```bash
+   python scripts/data_cleaning.py
+   ```
+3. **Store Data in Database**:
+   ```bash
+   python scripts/database_connection.py
+   ```
+4. **Start FastAPI Server** (Optional):
+   ```bash
+   uvicorn main:app --reload
+   ```
+   Access the API at `http://127.0.0.1:8000`.
 
-1. **Run the Data Scraper**:
-   - Execute the Telegram scraper to collect data from the specified channels:
-     ```bash
-     python scripts/telegram_scraper.py
-     ```
-
-2. **Run Data Cleaning and Transformation**:
-   - Use DBT (Data Build Tool) to clean and transform the scraped data:
-     ```bash
-     dbt run
-     ```
-
-3. **Run Object Detection**:
-   - Process images using the YOLO model:
-     ```bash
-     python scripts/object_detection.py
-     ```
-
-4. **Start the FastAPI Server**:
-   - Launch the FastAPI application to expose the collected data:
-     ```bash
-     uvicorn main:app --reload
-     ```
-   - The API will be available at `http://127.0.0.1:8000`.
+5. **Explore Data with Jupyter Notebook**:
+   ```bash
+   jupyter notebook notebook/data_cleaning.ipynb
+   ```
 
 ---
 
-## Key Features
+## 📞 Contact & Support
+For issues or questions nahoket@gmail.com.
 
-- **Centralized Data Storage**: All data is stored in a data warehouse, enabling efficient querying and analysis.
-- **Object Detection**: YOLO is used to extract insights from images, adding a visual dimension to the dataset.
-- **API Access**: The FastAPI application provides a user-friendly interface for accessing and querying the data.
-- **Scalable Design**: The project is designed to handle large volumes of data and can be extended to include additional data sources or analysis tools.
+---
 
+## 📌 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+--- 
+
+Enjoy exploring the Ethiopian medical business data! 🚀

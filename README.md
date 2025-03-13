@@ -39,16 +39,15 @@ WEEK7/
 |   ├── Object_detection_using_yolo.ipynb
 │── scripts/                       # Python scripts for processing
 │   ├── data_cleaning.py           # Functions for data cleaning
-│   ├── database_setup.py          # Database connection and table creation
-│   ├── scrape_data.py             # Telegram data scraper
+│   ├── database_connection.py          # Database connection and table creation
+│   ├── telegram_scraper.py            # Telegram data scraper
 │── telegram_message_dbt/          # dbt (Data build tools)
 │── test/                       # Python scripts for testing (unit test)
 │   ├── test_data_cleaning.py  
 │── .env                           # Environment variables
 │── .gitignore                     # Files to ignore in version control
 │── channels.json                  # List of Telegram channels
-│── requirements.txt               # Required Python dependencies
-│── run_scraper.sh                 # Shell script to execute scraper
+│── requirements.txt                
 │── README.md                      # Project documentation
 ```
 
